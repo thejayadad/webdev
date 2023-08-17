@@ -1,6 +1,7 @@
-const questionElement = document.getElementById('question');
-const choicesElement = document.getElementById('choices');
-const nextButton = document.getElementById('next-btn');
+
+const questionElement = document.getElementById('question')
+const choicesElement = document.getElementById('choices')
+const nextButton = document.getElementById('next-btn')
 
 const questions = [
     {
@@ -15,44 +16,41 @@ const questions = [
     },
 ];
 
-let currentQuestion = 0;
+let currentQuestion = 0
 
-function showQuestion() {
-    const question = questions[currentQuestion];
-    questionElement.textContent = question.question;
-
+function showQuestion(){
+    const question = questions[currentQuestion]
+    questionElement.textContent = question.question
     choicesElement.innerHTML = '';
-
     question.choices.forEach((choice, index) => {
-        const choiceButton = document.createElement('button');
+        const choiceButton = document.createElement('button')
         choiceButton.textContent = choice;
-        choiceButton.classList.add('btn');
-        choiceButton.addEventListener('click', () => checkAnswer(index));
-        choicesElement.appendChild(choiceButton);
-    });
+        choiceButton.classList.add('btn')
+        choiceButton.addEventListener('click', () => checkAnser(index))
+        choicesElement.appendChild(choiceButton)
+    })
 }
+function checkAnser(choiceIndex){
+    const isCorrect = choiceIndex === questions[currentQuestion].correctAnswer
 
-function checkAnswer(choiceIndex) {
-    const isCorrect = choiceIndex === questions[currentQuestion].correctAnswer;
-
-    if (isCorrect) {
-        choicesElement.innerHTML = '<p>Correct!</p>';
-    } else {
-        choicesElement.innerHTML = '<p>Wrong. Try again!</p>';
+    if(isCorrect){
+        choicesElement.innerHTML = '<p>Correct!</p>'
+    } else{
+        choicesElement.innerHTML = '<p>Wrong.Try again! </p>'
     }
 
     currentQuestion++;
-    if (currentQuestion < questions.length) {
-        nextButton.style.display = 'block';
+    if (currentQuestion < questions.length){
+        nextButton.style.display = 'block'
     } else {
-        nextButton.style.display = 'none';
-        choicesElement.innerHTML = '<p>Quiz completed! Thanks for playing.</p>';
+        nextButton.style.display = 'none'
+        choicesElement.innerHTML = '<p>Quiz Done! Thanks for playing</p>'
     }
 }
 
 nextButton.addEventListener('click', () => {
-    showQuestion();
-    nextButton.style.display = 'none';
-});
+    showQuestion()
+    nextButton.style.display = 'none'
+})
 
-showQuestion();
+showQuestion()

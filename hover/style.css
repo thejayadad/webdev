@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #050801;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+button{
+    padding: 15px 20px;
+    background: #050801;
+    color: #03e9f4;
+    font-weight: bold;
+    border-radius: 8px;
+    letter-spacing: 2;
+    overflow: hidden;
+    transition: .5s;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #03e9f4;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
