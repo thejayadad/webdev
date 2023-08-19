@@ -1,32 +1,21 @@
 
-
-const numbers = [6,10,30,5,8,9]
-//FOR LOOP
-function calculateAverage(arr){
-    let sum = 0
+const numbers = [5,6,2,2,9,10]
+//NESTED LOOPS
+function findDups(arr){
+    const duplicates = [];
     for(let i = 0; i < arr.length; i++){
-        sum += arr[i]
+        for(let j = i + 1; j < arr.length; j++){
+            if(arr[i] === arr[j] && !duplicates.includes(arr[i])){
+                duplicates.push(arr[i])
+            }
+        }
     }
-    return sum / arr.length
+    return duplicates
+    
 }
 
-console.log(calculateAverage(numbers))
+console.log(findDups(numbers))
+//FILTER INDEXOF
 
-//FOR EACH LOOP
 
-function calculateaver(arr){
-    let sum = 0;
-    arr.forEach(num => {
-        sum += num
-    })
-    return sum / arr.length
-}
-console.log(calculateaver(numbers))
-
-//REDUCE
-
-function calcAverage(arr){
-    const sum = arr.reduce((total, num) => total + num, 0)
-    return sum / arr.length
-}
-console.log(calcAverage(numbers))
+//OBJECT TRACKING
