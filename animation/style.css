@@ -13,38 +13,25 @@ h2 {
     margin-bottom: 25px;
 }
 
-.grid-container {
+.grid-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     max-width: 500px;
 }
-
-.grid-item {
+.grid-item{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    background-color: #3498db;
+    background: rgb(158, 33, 158);
     color: white;
     border-radius: 5px;
     height: 50px;
     width: 50px;
-    transition: transform 0.3s, background-color 0.3s;
+    transition: transform .3s background-color .3s;
 }
-
-.grid-item:hover {
+.grid-item:hover{
     transform: translate(-5px, -5px);
-    background-color: #2ecc71;
-}
-
-@keyframes moveAndColorChange {
-    0% {
-        transform: translateY(0);
-        background-color: #3498db;
-    }
-    100% {
-        transform: translateY(-20px);
-        background-color: #e74c3c;
-    }
+    background: #2ecc71;
 }
