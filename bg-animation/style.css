@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #f06, #9f6);
+  }
+  
+  .particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    mix-blend-mode: overlay;
+  }
+  
+  .particle-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  
