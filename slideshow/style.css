@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  h2{
+    text-align: center;
+    color: orangered;
+    font-size: 40px;
+  }
+  .slideshow-container {
+    max-width: 800px;
+    position: relative;
+  }
+  
+  .slide {
+    display: none;
+    width: 100%;
+    height: auto;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .fade {
+    animation: fadeInOut 10s infinite;
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    20%, 80% {
+      opacity: 1;
+    }
+  }
+  
