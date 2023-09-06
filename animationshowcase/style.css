@@ -5,16 +5,16 @@ body {
     align-items: center;
     background-color: #5870cd;
     flex-direction: column;
-    font-family: sans-serif;
+    font-family: monospace;
     color: white;
   }
-  
+
   .container {
     position: relative;
     width: 300px;
     height: 300px;
   }
-  
+
   .step {
     position: absolute;
     width: 100%;
@@ -26,32 +26,32 @@ body {
     font-size: 18px;
     background-color: rgba(0, 0, 0, 0.1);
   }
-  
+
   .step p {
     margin-top: 20px;
   }
-  
+
   .step-1 .box {
     width: 50px;
     height: 50px;
     background-color: #3498db;
     animation: basicAnimation 2s alternate infinite;
   }
-  
+
   .step-2 .box {
     width: 50px;
     height: 50px;
     background-color: #e74c3c;
     animation: keyframesAnimation 2s alternate infinite;
   }
-  
+
   .step-3 .box {
     width: 50px;
     height: 50px;
     background-color: #2ecc71;
     animation: transformAnimation 2s alternate infinite;
   }
-  
+
   @keyframes basicAnimation {
     0% {
       transform: translateX(0);
@@ -60,7 +60,7 @@ body {
       transform: translateX(150px);
     }
   }
-  
+
   @keyframes keyframesAnimation {
     0%, 100% {
       transform: translateY(0);
@@ -69,7 +69,7 @@ body {
       transform: translateY(100px);
     }
   }
-  
+
   @keyframes transformAnimation {
     0% {
       transform: scale(1);
@@ -81,4 +81,3 @@ body {
       transform: scale(1);
     }
   }
-  
