@@ -12,7 +12,7 @@ body {
 
 nav {
     padding-top: 19px;
-    width: 70vw;
+    width: 50vw;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -27,7 +27,6 @@ a {
     letter-spacing: 0.5px;
     padding: 0 20px;
     cursor: pointer;
-    transition: color 0.3s; /* Add text color transition */
 }
 
 a:before,
@@ -37,8 +36,7 @@ a:after {
     height: 3px;
     width: 0;
     background-color: orangered;
-    transition: width 0.5s, background-color 0.5s, transform 0.5s;
-    transform: translateY(0);
+    transition: width 0.5s, background-color 0.5s;
 }
 
 a:after {
@@ -51,20 +49,12 @@ a:before {
     top: -10px;
 }
 
-
-a:hover {
-    color: white;
-}
-
-
 a:hover:after {
     width: 100%;
     background-color: #3498db;
-    transform: translateY(3px);
 }
 
 a:hover:before {
     width: 100%;
     background-color: #3498db;
-    transform: translateY(-3px);
 }
