@@ -5,17 +5,16 @@ body {
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Display boxes in a column for separation */
+    align-items: center; /* Center align boxes */
 }
 
 .box {
-    width: 30%;
+    width: 80%; /* Adjust the width to your preference */
+    margin: 10px; /* Add margin for separation */
     padding: 20px;
     background-color: #3498db;
     color: #fff;
     text-align: center;
-    border: solid 1 whitesmoke;
 }
