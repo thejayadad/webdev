@@ -23,10 +23,11 @@ a {
     position: relative;
     text-decoration: none;
     color: #222;
-    font-size: 18px;
+    font-size: 12px;
     letter-spacing: 0.5px;
     padding: 0 20px;
     cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
 }
 
 a:before,
@@ -36,7 +37,7 @@ a:after {
     height: 3px;
     width: 0;
     background-color: orangered;
-    transition: width 0.5s, background-color 0.5s;
+    transition: width 0.5s, background-color 0.5s, transform 0.3s;
 }
 
 a:after {
@@ -49,12 +50,20 @@ a:before {
     top: -10px;
 }
 
+
 a:hover:after {
     width: 100%;
     background-color: #3498db;
+    transform: translateY(-5px);
 }
 
 a:hover:before {
     width: 100%;
     background-color: #3498db;
+    transform: translateY(5px);
+}
+
+
+a:hover {
+    color: white;
 }
