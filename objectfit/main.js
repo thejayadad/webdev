@@ -1,6 +1,7 @@
-function changeImage(style) {
+
+function changeImage(style){
     const image = document.getElementById('review-image');
-    switch (style) {
+    switch(style){
         case 'fill':
             image.style.objectFit = 'fill';
             break;
