@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+header {
+    background-color: blueviolet;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s;
+}
+
+#gallery {
+    background: burlywood;
+}
+
+#review {
+    background: orangered;
+}
+
+footer {
+    background-color: violet;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the revealed sections */
+.reveal {
+    opacity: 1;
+}
