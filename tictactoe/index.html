@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh;
+
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 5px;
+            margin: 20px auto;
+        }
+        .cell {
+            width: 20px;
+            height: 20px;
+            font-size: 8px;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #eee;
+            cursor: pointer;
+        }
+        .cell:hover {
+            background-color: #ccc;
+        }
+        .scoreboard {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="board" id="board"></div>
+    <div class="scoreboard">
+        <h2>Scoreboard</h2>
+        <p>Player X Wins: <span id="playerXWins">0</span></p>
+        <p>Player O Wins: <span id="playerOWins">0</span></p>
+        <p>Draws: <span id="draws">0</span></p>
+    </div>
+
+    <script>
+        const board = document.getElementById("board");
+        const cells = [];
+        let currentPlayer = "X";
+        let gameOver = false;
+        let playerXWins = 0;
+        let playerOWins = 0;
+        let draws = 0;
+
+        // Initialize the board
+        for (let i = 0; i < 9; i++) {
+            const cell = document.createElement("div");
+            cell.classList.add("cell");
+            cell.dataset.index = i;
+            cells.push(cell);
+            cell.addEventListener("click", () => makeMove(i));
+            board.appendChild(cell);
+        }
+
+        // Function to handle a player's move
+        function makeMove(index) {
+            if (gameOver || cells[index].textContent !== "") return;
+
+            cells[index].textContent = currentPlayer;
+
+            if (checkWin()) {
+                announceWinner(currentPlayer);
+            } else if (isBoardFull()) {
+                announceDraw();
+            } else {
+                currentPlayer = currentPlayer === "X" ? "O" : "X";
+            }
+        }
+
+        // Function to check if there's a winner
+        function checkWin() {
+            const winCombos = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+
+            for (const combo of winCombos) {
+                const [a, b, c] = combo;
+                if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Function to check if the board is full (a draw)
+        function isBoardFull() {
+            return cells.every(cell => cell.textContent !== "");
+        }
+
+        // Function to announce the winner
+        function announceWinner(player) {
+            gameOver = true;
+            if (player === "X") {
+                playerXWins++;
+                document.getElementById("playerXWins").textContent = playerXWins;
+            } else {
+                playerOWins++;
+                document.getElementById("playerOWins").textContent = playerOWins;
+            }
+            alert(`Player ${player} wins!`);
+        }
+
+        // Function to announce a draw
+        function announceDraw() {
+            gameOver = true;
+            draws++;
+            document.getElementById("draws").textContent = draws;
+            alert("It's a draw!");
+        }
+    </script>
+</body>
+</html>
